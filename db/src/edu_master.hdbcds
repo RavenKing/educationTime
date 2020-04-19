@@ -1,0 +1,20 @@
+namespace educationTime.db;
+
+context edu_master {
+
+    /*@@layout{"layoutInfo":{"x":-372,"y":-207.5}}*/
+    entity educationTime {
+        key id                 : Integer  generated always as identity (start with 10001 increment by 1);
+            user_id            : String(10);
+            calendar_week      : String(10);
+            edu_source         : String(100);
+            edu_topic          : String(100);
+            edu_duration       : Integer;
+            user_name          : String(100);
+            comment            : String(500);
+            edu_area           : String(100);
+            certificate_source : String(100);
+            certificate_topic  : String(100);
+            certificate_area   : String(100);
+    };
+}; 

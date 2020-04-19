@@ -1,0 +1,130 @@
+<mvc:View controllerName="com.ui.ui.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="education Time recording">
+					<content>
+						<VBox class="sapUiSmallMargin">
+							<u:Calendar id="calendar" select="handleCalendarSelect"/>
+							<f:Form id="team" editable="true">
+								<f:title>
+									<core:Title text="Team information"/>
+								</f:title>
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+										emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement label="Team">
+												<f:fields>
+													<Select id="country" selectedKey="{Country}">
+														<items>
+															<core:Item text="England" key="England"/>
+															<core:Item text="Germany" key="Germany"/>
+															<core:Item text="USA" key="USA"/>
+														</items>
+													</Select>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Calendar Week">
+												<f:fields>
+													<Input value="{timeRecordingModel>/calendar_week}" required="true"/>
+													<Text text="CW37"/>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<f:Form id="FormChange354" editable="true">
+								<f:title>
+									<core:Title text="Learning Entries"/>
+								</f:title>
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+										emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement label="Source">
+												<f:fields>
+													<Select id="source" selectedKey="{timeRecordingModel>/edu_source}">
+														<items>
+															<core:Item text="Learning Hub" key="LearningHub"/>
+															<core:Item text="OpenSAP" key="OpenSAP"/>
+															<core:Item text="Knowledge Session" key="Knowledge"/>
+														</items>
+													</Select>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Topic">
+												<f:fields>
+													<Input value="{timeRecordingModel>/edu_topic}"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Area">
+												<f:fields>
+													<Input value="{timeRecordingModel>/edu_area}"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Hours">
+												<f:fields>
+													<Input value="{timeRecordingModel>/edu_duration}"/>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<f:Form id="certificate" editable="true">
+								<f:title>
+									<core:Title text="Certificates"/>
+								</f:title>
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+										emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement label="Source">
+												<f:fields>
+													<Select id="certificateSource" selectedKey="{timeRecordingModel>/certificate_source}">
+														<items>
+															<core:Item text="England" key="England"/>
+															<core:Item text="Germany" key="Germany"/>
+															<core:Item text="USA" key="USA"/>
+														</items>
+													</Select>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Topic">
+												<f:fields>
+													<Input value="{timeRecordingModel>/certificate_topic}"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Area">
+												<f:fields>
+													<Input value="{timeRecordingModel>/certificate_area}"/>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<Button text="submit" press="submit"></Button>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
