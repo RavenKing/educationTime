@@ -20,6 +20,7 @@ sap.ui.define([
 				certificate_area: ""
 			});
 			this.getView().setModel(timeRecordingModel, "timeRecordingModel");
+			
 		},
 		submit: function () {
 			console.log(this.getView().getModel("timeRecordingModel"));
