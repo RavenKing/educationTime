@@ -20,11 +20,11 @@
 										<f:formElements>
 											<f:FormElement label="Team">
 												<f:fields>
-													<Select id="country" selectedKey="{Country}">
+													<Select id="country" selectedKey="{timeRecordingModel>/team}">
 														<items>
-															<core:Item text="England" key="England"/>
-															<core:Item text="Germany" key="Germany"/>
-															<core:Item text="USA" key="USA"/>
+															<core:Item text="CoE" key="CoE"/>
+															<core:Item text="Consulting" key="Consulting"/>
+															<core:Item text="Labs" key="Labs"/>
 														</items>
 													</Select>
 												</f:fields>
@@ -32,7 +32,7 @@
 											<f:FormElement label="Calendar Week">
 												<f:fields>
 													<Input value="{timeRecordingModel>/calendar_week}" required="true"/>
-													<Text text="CW37"/>
+													<Text text="CW18"/>
 												</f:fields>
 											</f:FormElement>
 										</f:formElements>
@@ -45,6 +45,13 @@
 								<f:title>
 									<core:Title text="Learning Entries"/>
 								</f:title>
+								<f:toolbar>
+									<Toolbar>
+										<Title id="LearningEntries" text="Learning Entries"/>
+										<ToolbarSpacer/>
+										<Button icon="sap-icon://add" press="addMoreEntries"/>
+									</Toolbar>
+								</f:toolbar>
 								<f:layout>
 									<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
 										emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
@@ -54,7 +61,7 @@
 										<f:formElements>
 											<f:FormElement label="Source">
 												<f:fields>
-													<Select id="source" selectedKey="{timeRecordingModel>/edu_source}">
+													<Select id="source" selectedKey="{timeRecordingModel>/eduData/0/edu_source}">
 														<items>
 															<core:Item text="Learning Hub" key="LearningHub"/>
 															<core:Item text="OpenSAP" key="OpenSAP"/>
@@ -65,17 +72,22 @@
 											</f:FormElement>
 											<f:FormElement label="Topic">
 												<f:fields>
-													<Input value="{timeRecordingModel>/edu_topic}"/>
+													<Input value="{timeRecordingModel>/eduData/0/edu_topic}"/>
 												</f:fields>
 											</f:FormElement>
 											<f:FormElement label="Area">
 												<f:fields>
-													<Input value="{timeRecordingModel>/edu_area}"/>
+													<Input value="{timeRecordingModel>/eduData/0/edu_area}"/>
 												</f:fields>
 											</f:FormElement>
 											<f:FormElement label="Hours">
 												<f:fields>
-													<Input value="{timeRecordingModel>/edu_duration}"/>
+													<Input value="{timeRecordingModel>/eduData/0/edu_duration}" type="Number"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Comment">
+												<f:fields>
+													<TextArea value="{timeRecordingModel>/eduData/0/comment}" rows="5"/>
 												</f:fields>
 											</f:FormElement>
 										</f:formElements>
@@ -99,9 +111,9 @@
 												<f:fields>
 													<Select id="certificateSource" selectedKey="{timeRecordingModel>/certificate_source}">
 														<items>
-															<core:Item text="England" key="England"/>
-															<core:Item text="Germany" key="Germany"/>
-															<core:Item text="USA" key="USA"/>
+															<core:Item text="Learning Hub" key="LearningHub"/>
+															<core:Item text="OpenSAP" key="OpenSAP"/>
+															<core:Item text="Knowledge Session" key="Knowledge"/>
 														</items>
 													</Select>
 												</f:fields>

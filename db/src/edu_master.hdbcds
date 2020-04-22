@@ -6,6 +6,7 @@ context edu_master {
     entity educationTime {
         key id                 : Integer  generated always as identity (start with 10001 increment by 1);
             user_id            : String(10);
+            team				:String(100);
             calendar_week      : String(10);
             edu_source         : String(100);
             edu_topic          : String(100);
